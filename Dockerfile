@@ -11,7 +11,7 @@ ENV RPC_PASS=${RPC_PASS}
 WORKDIR /root
 
 RUN git clone https://github.com/coinzen/devcoin.git
-RUN cd /root/devcoin/src && make -f makefile.unix USE_UPNP=false
+RUN cd /root/devcoin/src && make -f makefile.unix USE_UPNP=-
 RUN mv /root/devcoin/src/devcoind /usr/bin/devcoind
 
 RUN mkdir -p /data/devcoin
