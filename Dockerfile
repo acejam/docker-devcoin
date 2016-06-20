@@ -20,10 +20,10 @@ maxconnections=15\n\
 rpcuser=devcoinrpc\n\
 rpcpassword=${RPC_PASS}\n\
 rpcallowip=127.0.0.1\n\
-rpcport=6333\n\
-port=6334\n\
+rpcport=53333\n\
+port=63333\n\
 txindex=1\n" >> /data/devcoin/devcoin.conf
 
-EXPOSE 8332 8333 18332 18333
+EXPOSE 53333 63333
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 CMD ["/usr/bin/devcoind", "-datadir=/data/devcoin", "-printtoconsole"]
