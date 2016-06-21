@@ -14,12 +14,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
-    libboost-all-dev \
+    libboost-filesystem-dev \
+    libboost-program-options-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libboost-thread-dev \
     libdb4.8-dev \
     libdb4.8++-dev \
-    libssl-dev \
-    openssl \
-    wget
+    libssl-dev
 
 RUN git clone https://github.com/coinzen/devcoin.git && \
     cd /root/devcoin/src && \
