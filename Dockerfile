@@ -4,6 +4,8 @@ MAINTAINER Joshua Noble <acejam@gmail.com>
 ENV RPC_USER devcoinrpc
 ENV RPC_PASS P@ssw0rd
 ENV MAX_CONNECTIONS 15
+ENV RPC_PORT 6333
+ENV PORT 6334
 WORKDIR /root
 
 RUN apt-get update && \
