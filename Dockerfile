@@ -4,6 +4,8 @@ MAINTAINER Joshua Noble <acejam@gmail.com>
 ENV RPC_USER devcoinrpc
 ENV RPC_PASS P@ssw0rd
 ENV MAX_CONNECTIONS 15
+ENV RPC_PORT 6333
+ENV PORT 6334
 WORKDIR /root
 
 RUN apt-get update && \
@@ -14,12 +16,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
-    libboost-all-dev \
+    libboost-filesystem-dev \
+    libboost-program-options-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libboost-thread-dev \
     libdb4.8-dev \
     libdb4.8++-dev \
-    libssl-dev \
-    openssl \
-    wget
+    libssl-dev
 
 RUN git clone https://github.com/coinzen/devcoin.git && \
     cd /root/devcoin/src && \
