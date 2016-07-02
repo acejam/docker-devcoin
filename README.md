@@ -1,5 +1,6 @@
 # Devcoin for Docker
 
+[![Build Status](https://travis-ci.org/acejam/docker-devcoin.svg?branch=master)](https://travis-ci.org/acejam/docker-devcoin)
 [![Docker Stars](https://img.shields.io/docker/stars/acejam/devcoin.svg?maxAge=2592000)](https://hub.docker.com/r/acejam/devcoin)
 [![Docker Pulls](https://img.shields.io/docker/pulls/acejam/devcoin.svg?maxAge=2592000)](https://hub.docker.com/r/acejam/devcoin)
 
@@ -16,6 +17,7 @@ This container includes support for Devcoin configuration values. These values c
 The following values are configurable:
 * `RPC_USER`
 * `RPC_PASS`
+* `RPC_ALLOW_IP`
 * `MAX_CONNECTIONS`
 * `RPC_PORT`
 * `PORT`
