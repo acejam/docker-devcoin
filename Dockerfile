@@ -14,17 +14,18 @@ RUN apt-get update && \
     add-apt-repository ppa:bitcoin/bitcoin
 
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    git \
-    libboost-filesystem-dev \
-    libboost-program-options-dev \
-    libboost-system-dev \
-    libboost-test-dev \
-    libboost-thread-dev \
-    libdb4.8-dev \
-    libdb4.8++-dev \
-    libssl-dev
+      build-essential \
+      curl \
+      git \
+      libboost-filesystem-dev \
+      libboost-program-options-dev \
+      libboost-system-dev \
+      libboost-test-dev \
+      libboost-thread-dev \
+      libdb4.8-dev \
+      libdb4.8++-dev \
+      libssl-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN git clone https://github.com/coinzen/devcoin.git && \
     cd /root/devcoin/src && \
@@ -32,11 +33,9 @@ RUN git clone https://github.com/coinzen/devcoin.git && \
     mv /root/devcoin/src/devcoind /usr/bin/devcoind && \
     mkdir -p /data/devcoin
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 53333 63333
 VOLUME ["/data/devcoin"]
-CMD ["/usr/bin/devcoind", "-datadir=/data/devcoin", "-printtoconsole"]
+CMD ["/usr/bin/devcoind", "-datadir=/data/devcoin"]
